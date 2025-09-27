@@ -1,0 +1,33 @@
+prefix: "&8[&cCyberBan&8] "
+
+# usage / errors
+no-permission: "&cDafür hast du keine Rechte!"
+usage-ban: "&cBenutzung: /ban <spieler> <dauer|perm> [grund]"
+usage-unban: "&cBenutzung: /unban <spieler>"
+usage-mute: "&cBenutzung: /mute <spieler> <dauer|perm> [grund]"
+usage-unmute: "&cBenutzung: /unmute <spieler>"
+usage-ipban: "&cBenutzung: /ipban <spieler|ip> <grund>"
+usage-softban: "&cBenutzung: /softban <spieler> [grund]"
+invalid-duration: "&cUngültige Dauer! Bsp: 10m, 2h, 1d oder perm"
+already-banned: "&cDieser Spieler ist bereits gebannt."
+not-banned: "&cDer Spieler ist nicht gebannt."
+not-muted: "&cDer Spieler ist nicht gemutet."
+reload-success: "&aCyberBan: Nachrichten neu geladen."
+cyberban-usage: "&c/cyberban reload"
+
+# success messages (use placeholders %player%, %banner%, %reason%, %duration%, %ip%)
+ban-success: "&a%player% wurde von %banner% gebannt. Grund: %reason% (%duration%)"
+unban-success: "&a%player% wurde entbannt von %actor%."
+mute-success: "&a%player% wurde von %muter% gemutet. Grund: %reason% (%duration%)"
+unmute-success: "&a%player% wurde entmutet von %actor%."
+ipban-success: "&aIP %ip% wurde gebannt. Ziel: %player% Grund: %reason%"
+softban-success: "&a%player% wurde softgebannt von %banner%."
+
+# Kick templates
+ban-kick: "&cDu wurdest gebannt!\n&7Von: &f%banner%\n&7Grund: &f%reason%\n&7Dauer: &f%duration%\n\n&8Discord: support"
+# mute notice (for chat)
+mute-notify: "&cDu bist gemutet! &7Von: &f%muter% &7Grund: &f%reason% &7(%duration%)"
+
+# history
+history-empty: "&eKeine History gefunden."
+history-header: "&7History für &f%player%&7:"
