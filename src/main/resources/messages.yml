@@ -27,6 +27,8 @@ softban-success: "&a%player% wurde softgebannt von %banner%."
 ban-kick: "&cDu wurdest gebannt!\n&7Von: &f%banner%\n&7Grund: &f%reason%\n&7Dauer: &f%duration%\n\n&8Discord: support"
 # mute notice (for chat)
 mute-notify: "&cDu bist gemutet! &7Von: &f%muter% &7Grund: &f%reason% &7(%duration%)"
+update-available: "&c[CyberBan] Neue Version verfügbar: &f%2% &c(Sie haben %1%). Bitte aktualisieren Sie unter &fhttps://www.spigotmc.org/resources/cyberban.129121/"
+
 
 # history
 history-empty: "&eKeine History gefunden."

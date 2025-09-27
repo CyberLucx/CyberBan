@@ -1,83 +1,68 @@
-# CyberBan - config.yml
-# Erstellt: Beispielkonfiguration
-# Hinweise:
-# - "until": -1 oder "perm" = permanent, sonst Unix-Millis-Zeit oder Zeitraum-String wie "1d" (abhängig von Implementation).
-# - Diese Datei ist ein Template; dein Plugin kann separate files (bans.yml, mutes.yml, ipbans.yml, history.yml) benutzen.
-# - Passe die Werte an deine Bedürfnisse an.
-
+# CyberBan - config.yml (complete)
 general:
-  enforce-ops-only: true         # true = nur OPs dürfen Ban/Mute/Unban Befehle benutzen (falls Befehlschecks so implementiert)
-  broadcast-on-ban: true         # true = Broadcast an Server wenn gebannt wird
-  broadcast-on-mute: false       # true = Broadcast wenn gemutet wird
-  autosave-interval-minutes: 5   # Intervall zum automatischen Speichern (falls implementiert). 0 = deaktiviert
+  enforce-ops-only: true
+  broadcast-on-ban: true
+  broadcast-on-mute: false
+  autosave-interval-minutes: 5
 
 storage:
-  use-mysql: false               # plugin nutzt kein MySQL (du wolltest keine MySQL)
-  ban-file: "bans.yml"           # Datei im plugin-folder für gespeicherte Bans
+  use-mysql: false
+  ban-file: "bans.yml"
   mute-file: "mutes.yml"
   ipban-file: "ipbans.yml"
   history-file: "history.yml"
 
 kick-screen:
-  enabled: true                  # Kick-Nachricht bei Login wenn gebannt
-  # Mehrzeilige Nachricht - Platzhalter: %player%, %banner%, %reason%, %duration%
-  title: "&cDu wurdest gebannt!"
+  enabled: true
+  title: "&cYou have been banned!"
   lines:
-    - "&7Von: &f%banner%"
-    - "&7Grund: &f%reason%"
-    - "&7Dauer: &f%duration%"
+    - "&7By: &f%banner%"
+    - "&7Reason: &f%reason%"
+    - "&7Duration: &f%duration%"
     - ""
-    - "&8Besuche: &ediscord.me/deinserver"
-  use-gradient: false            # Wenn true: GUI/Kick könnte farbverlauf nutzen (falls implementiert)
+    - "&8Support: &bdiscord.gg/yourserver"
+  use-gradient: false
   gradient:
     from: "#ff5555"
-    to:   "#ffdd55"
+    to: "#ffdd55"
 
 defaults:
-  default-ban-duration: "perm"   # Standarddauer, z.B. "1d", "1h", "perm"
-  softban-duration-ms: 60000     # Zeit in ms für softban (1 Minute)
+  default-ban-duration: "perm"
+  softban-duration-ms: 60000
 
 messages:
-  file: "messages.yml"           # messages.yml Pfad, standard keys siehe Beispiel messages.yml
+  file: "messages.yml"
 
-# --- VORAB EINGETRAGENE EINTRÄGE (optional, Beispiel) ---
-# Diese Einträge können beim Pluginstart geladen werden, damit du bereits gebannte Spieler definieren kannst.
+version-check:
+  enabled: true
+# Dont Change this otherwise your Plugin will break
+  github-repo: "CyberLucx/CyberBan"
+  interval-minutes: 30
+
+logging:
+  debug: false
+  log-file: "cyberban.log"
+
 prebans:
-  # Beispiel eines permanenten Eintrags (Name-basierend)
-  - name: "CyberAlex0815"
+  - name: "ExamplePlayer"
     banner: "Admin"
-    until: "perm"               # "perm" oder -1 oder UnixMillis
-    reason: "Hacking / Cheats"
-
-  # Zeitlich begrenzter Ban (als ISO-Millisbeispiel)
-  - name: "BadGuy123"
-    banner: "Moderator"
-    until: 32503680000000       # Beispiel: großes Jahr (nur Demo). Alternativ "2d" falls parser unterstützt
-    reason: "Griefing"
+    until: "perm"
+    reason: "Example reason"
 
 premutes:
   - name: "NoisyPlayer"
     muter: "Helper"
     until: "1h"
-    reason: "Spam im Chat"
+    reason: "Spam"
 
 preipbans:
   - ip: "203.0.113.45"
     bis: "perm"
-    grund: "DDoS Attacken"
+    grund: "Example IP ban"
 
-# Debug/logging
-logging:
-  debug: false                  # true = ausführliche Logs setzen
-  log-file: "cyberban.log"
+kick-if-banned-online: true
 
-# Sicherheit / Anti-Escape
-kick-if-banned-online: true     # Spieler soll sofort gekickt werden, wenn ban gesetzt wird
-
-# Admin GUI (falls implementiert)
 gui:
   enabled: true
   rows: 3
   title: "&8CyberBan Admin"
-
-# Ende der config.yml

@@ -1,6 +1,6 @@
 name: CyberBan
 main: org.cyberluca.cyberBan.CyberBanPlugin
-version: 2.0.1
+version: 2.0.2
 api-version: 1.20
 author: CyberLuca
 
@@ -29,6 +29,9 @@ commands:
   softban:
     description: Softbannt einen Spieler.
     usage: /softban <spieler> [grund]
+  cyberbanversion:
+    description: "Check for CyberBan updates"
+    usage: /cyberbanversion check
   ipban:
     description: Bannt die IP eines Spielers.
     usage: /ipban <spieler|ip> <grund>
