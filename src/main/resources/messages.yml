@@ -15,6 +15,7 @@ not-muted: "&cDer Spieler ist nicht gemutet."
 reload-success: "&aCyberBan: Nachrichten neu geladen."
 cyberban-usage: "&c/cyberban reload"
 
+
 # success messages (use placeholders %player%, %banner%, %reason%, %duration%, %ip%)
 ban-success: "&a%player% wurde von %banner% gebannt. Grund: %reason% (%duration%)"
 unban-success: "&a%player% wurde entbannt von %actor%."
